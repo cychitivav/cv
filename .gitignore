@@ -3,3 +3,6 @@
 
 # Output files
 build/
+
+# Local configuration
+indent.log
