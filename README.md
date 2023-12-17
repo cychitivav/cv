@@ -15,3 +15,11 @@ docker run --rm \
 ```
 
 > **Important**: You need to have the `build` folder created before running the command above. Do not worry, the folder is already ignored by git.
+
+### Local development
+
+If you want to develop locally, you need to install:
+
+- [TeX Live](https://www.tug.org/texlive/) - A TeX distribution to compile the project. (`sudo apt install texlive`)
+- Indentation plugin for your editor of choice. (`sudo apt install texlive-latex-utils`)
+- Fontawesome package for LaTeX. (`sudo apt install texlive-fonts-extra`)
