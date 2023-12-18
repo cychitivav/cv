@@ -67,7 +67,7 @@
 
 % Command to output an icon in a black square box with text to the right
 \newcommand{\link}[2]{% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-	\begin{spacing}{1.2}
+	\begin{spacing}{1.1}
 		{\textcolor{black}{\normalsize\csname fa#1\endcsname}}% Icon
 		\hspace{0.5em}% Whitespace
 		\textcolor{black}{\normalsize#2}% Text
@@ -78,7 +78,6 @@
 
 \usepackage[none]{hyphenat} % Suppress text hyphenation
 
-
 % ----------------------------------------------
 % SECTIONS
 % ----------------------------------------------
@@ -87,7 +86,7 @@
 \def\Vhrulefill{\leaders\hrule height0.7ex depth\dimexpr0.4pt-0.7ex\hfill} % Horizontal middle rule fill macro
 
 \titleformat{\section}
-{\normalsize\bfseries\MakeUppercase}
+{\LARGE\bfseries\MakeUppercase}
 {\thesection.}
 {1em}
 {#1\hspace{1em}\Vhrulefill}
@@ -107,27 +106,27 @@
 
 \renewcommand{\maketitle}{
 	\Huge\textbf{\@author} \newline
-	\Large{\@title}
+	\LARGE{\@title}
 }
 
 % ----------------------------------------------
 % ENTRY LIST
 % ----------------------------------------------
 \usepackage{enumitem} % Required for manipulating lists
+\setlist[itemize]{noitemsep, partopsep=0pt, topsep=0pt}
 
 \newenvironment{entrylist}
 {
-	\begin{itemize}[leftmargin=0cm, label={}]
+	\begin{itemize}[leftmargin=0cm, label={}, itemsep=4ex]
 		}{
 	\end{itemize}
 }
 
-\newcommand{\entry}[5]
-{
+\newcommand{\entry}[5]{
 	\item
-	\textbf{#1} \hfill #2 \\
-	\textit{#3} \hfill #4 \\
-	#5
+	\Large\textbf{#1} \hfill \normalsize#2 \\
+	\large\textit{#3} \hfill #4
+	\par\normalsize#5
 }
 
 % ----------------------------------------------
