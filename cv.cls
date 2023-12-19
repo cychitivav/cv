@@ -135,7 +135,8 @@
 \usepackage{fancyhdr} % Required for footer
 
 \pagestyle{fancy}
-\fancyhf{}
+\fancyhf{} % Clear default headers and footers
+\renewcommand{\headrulewidth}{0pt} % Remove the default rule in the header
 
 \newcommand{\makefooter}{
 	\lfoot{\the\year} % Left footer text
