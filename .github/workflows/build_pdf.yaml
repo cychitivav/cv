@@ -1,0 +1,22 @@
+name: Test
+
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install latex packages
+        run: apt-get install texlive texlive-latex-utils texlive-fonts-extra
+
+      - name: Build
+        run: pdflatex -output-directory=./build main.tex
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv
+          path: ./build/main.pdf
