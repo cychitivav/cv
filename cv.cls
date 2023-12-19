@@ -74,8 +74,6 @@
 	\end{spacing}
 }
 
-\usepackage{calc} % Required for calculating the width of text blocks
-
 \usepackage[none]{hyphenat} % Suppress text hyphenation
 
 % ----------------------------------------------
