@@ -12,9 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install latex packages
-        run: |
-          sudo apt-get update &&
-          sudo apt-get install texlive texlive-extra-utils texlive-fonts-extra -y
+        run: sudo apt-get install texlive texlive-extra-utils texlive-fonts-extra -y
 
       - name: Build
         run: sudo pdflatex -output-directory=./build main.tex
