@@ -18,7 +18,7 @@ jobs:
 
       - name: Build
         run: |
-          ls &&
+          mkdir build &&
           pdflatex --output-directory=./build main.tex
 
       - name: Upload artifact
