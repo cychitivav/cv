@@ -61,7 +61,7 @@
 % LINKS
 % -----------------------------------------------
 
-\usepackage[fixed]{fontawesome5} % Required for FontAwesome icons
+\usepackage[fixed]{fontawesome5} % Required for FontAwesome icons (https://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf)
 \usepackage{setspace} % Required for adjusting line spacing
 \usepackage{color} % Required for custom colors
 
