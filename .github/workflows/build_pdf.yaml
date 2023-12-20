@@ -15,7 +15,9 @@ jobs:
         run: sudo apt-get install texlive texlive-extra-utils texlive-fonts-extra -y
 
       - name: Build
-        run: sudo pdflatex -output-directory=./build main.tex
+        run: |
+          ls &&
+          pdflatex --output-directory=./build main.tex
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
