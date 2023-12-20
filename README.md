@@ -21,5 +21,5 @@ docker run --rm \
 If you want to develop locally, you need to install:
 
 - [TeX Live](https://www.tug.org/texlive/) - A TeX distribution to compile the project. (`sudo apt install texlive`)
-- Indentation plugin for your editor of choice. (`sudo apt install texlive-latex-utils`)
+- Indentation plugin for your editor of choice. (`sudo apt install texlive-extra-utils`)
 - Fontawesome package for LaTeX. (`sudo apt install texlive-fonts-extra`)
