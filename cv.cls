@@ -38,6 +38,8 @@
 \usepackage{multicol} % Required for multiple columns layout
 \setlength{\columnsep}{2em}
 
+\usepackage{lipsum} % Required for inserting dummy text
+
 % ----------------------------------------------
 % PAGE LAYOUT
 % ----------------------------------------------
@@ -102,6 +104,8 @@
 \newcommand{\name}[1]{\author{#1}}
 \newcommand{\headline}[1]{\title{#1}}
 
+\newcommand{\thename}{\makeatletter\@author\makeatother}
+
 \renewcommand{\maketitle}{
 	\Huge\textbf{\@author} \newline
 	\LARGE{\@title}
@@ -138,8 +142,19 @@
 
 \newcommand{\makefooter}{
 	\lfoot{\the\year} % Left footer text
-	\cfoot{\@author~~~·~~~Résumé} % Centre footer text
+	\cfoot{\@author~~~·~~~Cover letter} % Centre footer text
 	\rfoot{\LaTeX{}} % Right footer text
 }
 
+% ----------------------------------------------
+% COVER LETTER
+% ----------------------------------------------
+\usepackage{etoolbox} % Required for \ifstrempty
 
+\newcommand{\recipient}[5]{\def\recipientname{#1}
+	\recipientname \\ % Name of recipient
+	\ifstrempty{#2}{}{#2 \\} % Headline
+	#3 \\ % Company
+	#4 \\ % Address
+	#5 % City, zip code, country code
+}

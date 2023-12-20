@@ -1,55 +1,28 @@
-\documentclass[9pt]{cv}
+\documentclass[11pt]{cv}
 \usepackage{times}
 
 \name{Cristian Yesid Chitiva Vela}
-\headline{Full Stack Developer $\sim$ Mechatronics Engineer}
 
 \begin{document}
 
-\begin{multicols}{2}
-    \maketitle
+\today\vspace{1em}\\
 
-    \columnbreak
+\recipient{Recruiter name}
+{Position}
+{Company}
+{Address}
+{City, State, Zip}
+\vspace{2em}
 
-    \begin{multicols}{2}
-        \link{GlobeAmericas}{\href{https://cristianchitiva.dev}{cristianchitiva.dev}}
-        \link{Phone}{\href{tel:+573195522069}{+57 319 5522069}}
-        \link{MapMarker}{Bogotá, Colombia}
+Dear \recipientname,
+\vspace{1em}
 
-        \columnbreak
+\par\input{sections/opening.tex}\\
+\par\input{sections/middle.tex}\\
+\par\input{sections/closing.tex}\\
 
-        \link{Envelope}{\href{mailto:cychitivav@unal.edu.co}{cychitivav@unal.edu.co}}
-        \link{Github}{\href{https://github.com/cychitivav}{github.com/cychitivav}}
-        \link{Linkedin}{\href{https://www.linkedin.com/in/cychitivav}{/in/cychitivav}}
-
-    \end{multicols}
-\end{multicols}
-
-\begin{multicols}{2}
-    \section*{Summary}
-    Web Developer specializing in Full stack development with expertise in Python and Node.js. Passionate about robotics, seeking opportunities to integrate technology and create innovative solutions in both web development and robotics domains.
-    \vfill\null % add whitespace to balance columns
-
-    \columnbreak
-
-    \section*{Skills}
-    \subsection*{Languages}
-    \parbox[t]{\dimexpr\columnwidth-5em}{
-        JavaScript, SQL, Python, Java, HTML, C++, CSS.
-    }
-
-    \subsection*{Technologies}
-    \parbox[t]{\dimexpr\columnwidth-7em}{
-        Docker, ROS, Git, GitHub, React.js, Express.js, Next.js, FastAPI, Flask, Numpy, Matplotlib, Pandas, OpenCV, PostgreSQL, Arduino, Raspberry Pi, ESP32.
-    }
-\end{multicols}
-
-
-\input{sections/projects.tex}
-\input{sections/education.tex}
-\input{sections/experience.tex}
-\input{sections/languages.tex}
-
+Sincerely,\\\\
+\thename
 
 \makefooter
 \end{document}
