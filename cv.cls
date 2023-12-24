@@ -46,7 +46,7 @@
 
 \geometry{
 	paper=letterpaper, % Paper size, change to letterpaper for US letter size
-	margin=1.6cm, % Top margin
+	margin=2.6cm, % Top margin
 	% showframe % Uncomment to show how the type block is set on the page
 }
 
@@ -57,6 +57,10 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
+% Set sans serif as default font
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[default, light]{roboto} % Use the Roboto font
 % -----------------------------------------------
 % LINKS
 % -----------------------------------------------
@@ -84,16 +88,27 @@
 \def\Vhrulefill{\leaders\hrule height0.7ex depth\dimexpr0.4pt-0.7ex\hfill} % Horizontal middle rule fill macro
 
 \titleformat{\section}
-{\LARGE\bfseries\MakeUppercase}
-{\thesection.}
+{\Large\bfseries\MakeUppercase} % Style
+{\thesection.} % Label
 {1em}
-{#1\hspace{1em}\Vhrulefill}
+{#1} % Code before
+
+\titlespacing{\section}
+{0em} % Left
+{1em} % Before
+{0.5em} % After
 
 \titleformat{\subsection} [runin]
 {\large\bfseries}
 {}
 {0em}
 {#1:}
+[]
+
+\titlespacing{\subsection}
+{0em} % Left
+{0em} % Before
+{0.5em} % After
 
 % ----------------------------------------------
 % CUSTOM TITLE
@@ -103,8 +118,16 @@
 \newcommand{\headline}[1]{\title{#1}}
 
 \renewcommand{\maketitle}{
-	\Huge\textbf{\@author} \newline
-	\LARGE{\@title}
+	\begin{center}
+		{
+			\fontseries{sb}
+			\fontsize{27}{48}
+			\bfseries
+			\MakeUppercase
+			\@author
+		} \\
+		\huge{\@title}
+	\end{center}
 }
 
 % ----------------------------------------------
@@ -115,16 +138,16 @@
 
 \newenvironment{entrylist}
 {
-	\begin{itemize}[leftmargin=0cm, label={}, itemsep=4ex]
+	\begin{itemize}[leftmargin=0cm, label={}, itemsep=0.5em]
 		}{
 	\end{itemize}
 }
 
 \newcommand{\entry}[5]{
 	\item
-	\Large\textbf{#1} \hfill \normalsize#2 \\
-	\large\textit{#3} \hfill #4
-	\par\normalsize#5
+	\textbf{#1} \hfill \small#2 \\
+	\textit{#3} \hfill \small#4
+	\normalsize\par#5
 }
 
 % ----------------------------------------------
@@ -142,4 +165,25 @@
 	\rfoot{\LaTeX{}} % Right footer text
 }
 
+% ----------------------------------------------
+% BACKGROUND
+% ----------------------------------------------
+\usepackage{tikz} % Required for adding custom images to background
+\usepackage{background} % Required for setting background images (bg) on the title page
+\usepackage{xcolor} % Required for custom colors
 
+\backgroundsetup{
+	scale=1,
+	color=black,
+	opacity=1,
+	angle=45,
+	position=current page.north west, % Top left corner
+	nodeanchor=north,% Anchor the background at its top
+	contents={
+			\begin{tikzpicture}
+				\fill[lightgray] (0,0) rectangle (20,1);
+				\fill[gray] (0,1) rectangle (20,2);
+				\fill[darkgray] (0,2) rectangle (20,3);
+			\end{tikzpicture}
+		}
+}
